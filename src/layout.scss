@@ -1,0 +1,32 @@
+@use "./responsive.scss";
+
+.layout {
+    height: 100vh;
+    max-width: 85.375rem; // 1366px
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 1.25rem; // 20px
+    padding-right: 1.25rem; //20px
+    display: flex;
+    flex-direction: column;
+
+
+    @include responsive.lg {
+        max-width: 1280px;
+    }
+
+    @include responsive.md {
+        max-width: 768px;
+    }
+
+    @include responsive.sm {
+        max-width: 640px;
+    }
+
+    .content{
+        flex: 1;
+    }
+
+
+
+}

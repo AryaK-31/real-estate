@@ -1,0 +1,118 @@
+@use "../.././responsive.scss";
+
+nav {
+    height: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+
+    a {
+        transition: all 0.4s ease;
+
+        @include responsive.sm {
+            display: none
+        }
+
+        &:hover {
+            scale: 1.05;
+        }
+
+    }
+
+    .left {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 28px;
+            }
+
+            span {
+                @include responsive.md {
+                    display: none;
+                }
+
+                @include responsive.sm {
+                    display: initial;
+                }
+
+            }
+        }
+    }
+
+    .right {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: #fcf5f3;
+        height: 100%;
+
+        @include responsive.md {
+            background-color: transparent;
+        }
+
+        a {
+            padding: 12px 24px;
+            margin: 20px;
+        }
+
+        .register {
+            background-color: #fece51;
+        }
+
+
+        img {
+            height: 32px;
+            width: 32px;
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            display: none;
+            z-index: 999;
+
+            @include responsive.sm {
+                display: initial;
+            }
+        }
+
+        .menu {
+            background-color: black;
+            height: 100vh;
+            position: absolute;
+            width: 50%;
+            top: 0;
+            right: -50%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s ease-in all;
+
+            &.active {
+                right: 0;
+            }
+
+            @include responsive.sm {
+                a {
+                    display: initial;
+                }
+            }
+
+        }
+
+
+    }
+}

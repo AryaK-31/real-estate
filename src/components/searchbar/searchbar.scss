@@ -1,28 +1,114 @@
-.searchBar{
+@use '../../responsive.scss';
 
-    .type{
-        button{
+.searchBar {
+    .type {
+        button {
             padding: 16px 36px;
             border: 1px solid #999;
+            border-bottom: none;
             text-transform: capitalize;
             cursor: pointer;
             background-color: #fff;
 
-            &:first-child{
+            @include responsive.sm {
+                border-bottom: 1px solid #999;
+            }
+
+            &:first-child {
                 border-top-left-radius: 5px;
                 border-right: 0;
             }
 
-            &:last-child{
+            &:last-child {
                 border-top-right-radius: 5px;
                 border-left: 0;
             }
 
-            &.active{
+            &.active {
                 background-color: black;
                 color: white;
             }
-        }        
+        }
+    }
+
+    form {
+        border: 1px solid #999;
+        display: flex;
+        justify-content: space-between;
+        height: 64px;
+        gap: 5px;
+
+        @include responsive.sm {
+            flex-direction: column;
+            border: none;
+            gap: 10px;
+
+            input {
+                &:first-child {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        input {
+            border: none;
+            padding: 0 10px;
+            width: 200px;
+
+
+            @include responsive.lg {
+                padding: 0 8px;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: 160px;
+                }
+            }
+
+            @include responsive.md {
+                width: 200px;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: 200px;
+                }
+            }
+
+            @include responsive.sm {
+                width: auto;
+                background: #e8e8e8;
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: auto;
+                }
+            }
+
+            @include responsive.sm {
+                padding: 20px;
+            }
+        }
+
+
+        button {
+            flex: 1;
+            border: none;
+            background-color: #fece51;
+            cursor: pointer;
+
+            @include responsive.sm {
+                height: 50px;
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+
+                @include responsive.sm {
+                    padding: 2px;
+                }
+            }
+        }
     }
 
 }

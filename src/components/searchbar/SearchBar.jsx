@@ -19,9 +19,6 @@ const SearchBar = () => {
     }))
   }
 
-  console.log(query.type);
-
-
   return (
     <div className="searchBar">
       <div className="type">

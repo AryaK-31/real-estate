@@ -1,10 +1,9 @@
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import HomePage from './routes/homePage/HomePage'
+import HomePage from './routes/homePage/homePage'
 import Layout from "./Layout/Layout";
-import ListPage from "./routes/listPage/ListPage";
-import SinglePage from "./routes/singlePage/SinglePage";
-
+import SinglePage from "./routes/singlePage/singlePage";
+import ListPage from "./routes/listPage/listPage";
 
 function App() {
 
@@ -30,9 +29,7 @@ function App() {
   ]);
 
   return (
-
     <RouterProvider router={router} />
-
   )
 }
 
